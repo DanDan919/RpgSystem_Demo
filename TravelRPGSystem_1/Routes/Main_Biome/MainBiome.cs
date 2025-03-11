@@ -18,7 +18,6 @@ namespace TravelRPGSystem_1.Routes.Main_Biome
             Character = character;
         }
 
-        public abstract void ApplyDebuff();
-        public abstract void TriggerEvent();
+
     }
 }

@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelRPGSystem_1.Characters.Person_Class;
 
-namespace TravelRPGSystem_1.Routes.Mountainous_terrain
+namespace TravelRPGSystem_1.Routes.Dungeon
 {
-    public interface IMountainsDebuff
+    public interface IDungeonDebuff
     {
-        void ApplyMountainsDebuff(Person_entities character);
+        void ApplyDungeonDebuff(Person_entities character);
     }
 }

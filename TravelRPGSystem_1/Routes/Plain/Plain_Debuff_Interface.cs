@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelRPGSystem_1.Characters.Person_Class;
 
 namespace TravelRPGSystem_1.Routes.Plain
 {
-    internal class Plain_Debuff_Interface
-    {
-    }
+   
+        public interface IPlainsDebuff
+        {
+            void ApplyPlainsDebuff(Person_entities character);
+        }
+    
 }

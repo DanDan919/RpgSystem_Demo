@@ -8,8 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Obstacles\Natural_events\" />
-    <Folder Include="Obstacles\Marauders_attack\" />
     <Folder Include="Reward_system_Rest\Reward_Stats\" />
     <Folder Include="Reward_system_Rest\Reward_Loot\" />
     <Folder Include="Routes\Settlement\Events\" />

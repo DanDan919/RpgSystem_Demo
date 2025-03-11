@@ -16,7 +16,8 @@ using TravelRPGSystem_1.Routes.Main_Biome;
 
             public Dwarf_Stats() : base(120, 80, 110, 60, 80) // Здоровье, стамина, выносливость, интеллект, ловкость
             {
-                Damage = 25;
+                
             }
+           Dwarf_Stats dwarf = new Dwarf_Stats();
         }
     }
