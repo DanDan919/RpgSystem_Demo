@@ -9,5 +9,4 @@ using TravelRPGSystem_1.Routes.Main_Biome;
 public interface ISwampsDebuff
 {
     void ApplySwampsDebuff(Person_entities character);
-    void TriggerSwampEvent();
 }

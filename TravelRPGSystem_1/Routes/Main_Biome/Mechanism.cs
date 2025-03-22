@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TravelRPGSystem_1.Characters.Person_Class;
+using TravelRPGSystem_1.Movement_on_the_map;
+
 
 
 namespace TravelRPGSystem_1.Routes.Main_Biome
 {
-    class Move_Algorithm
+    public class Mechanism
     {
         private Stack<Main_Biome> biomeStack;
         private Random rng;
 
-        public Move_Algorithm(Person_entities character)
+        public Mechanism(Person_entities character)
         {
             biomeStack = new Stack<Main_Biome>();
             rng = new Random();
@@ -41,6 +43,14 @@ namespace TravelRPGSystem_1.Routes.Main_Biome
             {
                 Console.WriteLine(biome.Name);
             }
+        }
+        public bool IsBiomeStackEmpty()
+        {
+            return biomeStack.Count == 0;
+        }
+        public Main_Biome PopBiome()
+        {
+            return biomeStack.Pop();
         }
     }
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelRPGSystem_1.Events.Event_algorithm;
 
-namespace TravelRPGSystem_1.Obstacles.Natural_events
+namespace TravelRPGSystem_1.Obstacles.Swamps
 {
-    internal class Quagmire_Swamps
+    internal class Slowing_quagmire
     {
     }
 }

@@ -4,27 +4,65 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TravelRPGSystem_1.Routes.Main_Biome;
+using TravelRPGSystem_1.Obstacles;
+
 
 
 namespace TravelRPGSystem_1.Characters.Person_Class
 {
-
-
     public abstract class Person_entities
     {
-        public int Health { get; protected set; }
-        public double Stamina { get; protected set; }
-        public int Endurance { get; protected set; }
-        public int Intelligence { get; protected set; }
-        public int Speed { get; protected set; }
+        public int Health { get; set; }
+        public int Stamina { get;  set; }
+        public int Endurance { get; set; }
+        public int Intelligence { get; set; } 
+        public int Speed { get; set; }
+        
 
-        protected Person_entities(int health, double stamina, int endurance, int intelligence, int speed)
+        public Person_entities(int health, int stamina, int endurance, int intelligence, int speed)
         {
+            
             Health = health;
             Stamina = stamina;
             Endurance = endurance;
             Intelligence = intelligence;
             Speed = speed;
         }
+
+        // 📌 Метод для применения баффов
+        public void ApplyBuff(int healthBuff, int staminaBuff, int enduranceBuff, int intelligenceBuff, int speedBuff)
+        {
+            Health += healthBuff;
+            Stamina += staminaBuff;
+            Endurance += enduranceBuff;
+            Intelligence += intelligenceBuff;
+            Speed += speedBuff;
+
+            Console.WriteLine($"🔹 Бафф применён: +{healthBuff} HP, +{staminaBuff} Stamina, +{enduranceBuff} Endurance, +{intelligenceBuff} Intelligence, +{speedBuff} Speed");
+        }
+
+        // 📌 Метод для применения дебаффов
+        public void ApplyDebuff(int healthDebuff, int staminaDebuff, int enduranceDebuff, int intelligenceDebuff, int speedDebuff)
+        {
+            Health -= healthDebuff;
+            Stamina -= staminaDebuff;
+            Endurance -= enduranceDebuff;
+            Intelligence -= intelligenceDebuff;
+            Speed -= speedDebuff;
+
+            Console.WriteLine($"⚠️ Дебафф получен: -{healthDebuff} HP, -{staminaDebuff} Stamina, -{enduranceDebuff} Endurance, -{intelligenceDebuff} Intelligence, -{speedDebuff} Speed");
+        }
+        public void ModifySpeed(int amount)
+        {
+            Speed += amount;
+            if (Speed < 0) Speed = 0; // Минимальная скорость = 0
+        }
+        public void PrintStats()
+        {
+            Console.WriteLine($"📊 Статы персонажа: HP: {Health}, Stamina: {Stamina}, Endurance: {Endurance}, Intelligence: {Intelligence}, Speed: {Speed}");
+        }
     }
+    
 }
+    
+ 

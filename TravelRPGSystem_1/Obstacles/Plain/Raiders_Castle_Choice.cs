@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelRPGSystem_1.Events.Event_algorithm;
 
-namespace TravelRPGSystem_1.Obstacles.Marauders_attack
+namespace TravelRPGSystem_1.Obstacles.Plain
 {
-    internal class Marauders_Attack_events
+    internal class Raiders_Castle_Choice
     {
     }
 }
