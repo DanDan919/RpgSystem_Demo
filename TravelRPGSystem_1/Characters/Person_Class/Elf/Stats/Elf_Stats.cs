@@ -12,7 +12,7 @@ namespace TravelRPGSystem_1.Characters.Person_Class
    
         public class Elf_Stats : Person_entities
         {
-            public Elf_Stats() : base(120, 80, 110, 60, 80) // (HP, Stamina, Endurance, Intelligence, Speed)
+            public Elf_Stats(string name) : base(120, 80, 110, 60, 80,name) // (HP, Stamina, Endurance, Intelligence, Speed)
             {
             }
         }  

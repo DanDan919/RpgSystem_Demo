@@ -20,11 +20,11 @@ namespace TravelRPGSystem_1.Obstacles.Dungeon
 
         public void TriggerEvent()
         {
-            Console.WriteLine("💀 Из гробов восстаёт нежить! Вас атакуют!");
+            Console.WriteLine("⚠ Из гробов восстаёт нежить! Вас атакуют! Некроманты накладывают дебаффы");
             _character.Health -= 20; // Уменьшаем здоровье персонажа
             _character.Stamina -= 10; // Уменьшаем стамину
-
-            Console.WriteLine($"🩸 Ваше текущее здоровье: {_character.Health}, Стамина: {_character.Stamina}");
+            _character.Intelligence -= 3;
+            Console.WriteLine($"⚠ Ваше текущее здоровье: {_character.Health}, Стамина: {_character.Stamina}");
         }
     }
 }

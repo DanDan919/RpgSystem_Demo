@@ -6,6 +6,7 @@ using TravelRPGSystem_1.Obstacles;
 using TravelRPGSystem_1;
 using TravelRPGSystem_1.Routes.Dungeon;
 
+
 namespace TravelRPGSystem_1.Movement_on_the_map
 {
     public class Move_Algorithm
@@ -27,20 +28,22 @@ namespace TravelRPGSystem_1.Movement_on_the_map
                 return;
             }
 
-            Main_Biome currentBiome = biomeMechanism.PopBiome(); // Извлекаем следующий биом
+            Main_Biome currentBiome = biomeMechanism.PopBiome();
             Console.WriteLine($"\n🌍 Персонаж входит в биом: {currentBiome.Name}");
 
-            // 🔥 Применяем специфический дебафф
+            // Применяем дебафф
             ApplyBiomeEffects(currentBiome);
 
-            // 🕒 Рассчитываем задержку перед выходом из биома
+            // Рассчитываем задержку
             int delay = CalculateTravelTime(Character);
             Console.WriteLine($"⏳ Время прохождения биома: {delay / 1000} секунд...");
-            await Task.Delay(delay);
 
-            // 📢 Триггерим случайное событие
+            // Вызов прогресс-бара
+            ProgressBar progressBar = new ProgressBar();
+            await progressBar.ShowProgressBar(delay);
+
+            // Триггерим событие
             currentBiome.TriggerEvent();
-
             Console.WriteLine($"✅ Персонаж прошел биом {currentBiome.Name}!");
         }
 
@@ -54,7 +57,15 @@ namespace TravelRPGSystem_1.Movement_on_the_map
                 case Main_Dungeon dungeon:
                     dungeon.ApplyDungeonDebuff(Character);
                     break;
-                // Добавляем другие биомы сюда
+                case Main_Mountains mountains:
+                    mountains.ApplyMountainsDebuff(Character);
+                    break;
+                case Main_Plain plain:
+                    plain.ApplyPlainsDebuff(Character);
+                    break;
+                case Main_Town town:
+                    town.TriggerEvent(); // В городе персонаж восстанавливается
+                    break;
                 default:
                     Console.WriteLine("⚠️ В этом биоме нет специальных эффектов.");
                     break;

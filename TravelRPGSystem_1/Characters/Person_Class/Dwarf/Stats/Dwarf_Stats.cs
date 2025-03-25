@@ -11,7 +11,7 @@ namespace TravelRPGSystem_1.Characters.Person_Class
 {
     public class Dwarf_Stats : Person_entities
     {
-        public Dwarf_Stats() : base(120, 80, 110, 60, 80) // (HP, Stamina, Endurance, Intelligence, Speed)
+        public Dwarf_Stats(string name) : base(100, 120, 80, 110, 60,name)
         {
         }
     }

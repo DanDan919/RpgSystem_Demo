@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelRPGSystem_1.Routes.Main_Biome;
 using TravelRPGSystem_1.Obstacles;
+using System.Xml.Linq;
 
 
 
@@ -12,16 +13,37 @@ namespace TravelRPGSystem_1.Characters.Person_Class
 {
     public abstract class Person_entities
     {
+        public string Name { get; private set; }
         public int Health { get; set; }
         public int Stamina { get;  set; }
         public int Endurance { get; set; }
         public int Intelligence { get; set; } 
         public int Speed { get; set; }
-        
 
-        public Person_entities(int health, int stamina, int endurance, int intelligence, int speed)
+        public int MaxHealth { get; protected set; }
+        public int MaxStamina { get; protected set; }
+        public int MaxEndurance { get; protected set; }
+        public int MaxIntelligence { get; protected set; }
+
+
+        // 📌 Метод для полного восстановления персонажа
+        public void RestoreFullStats()
         {
-            
+            Health = MaxHealth;
+            Stamina = MaxStamina;
+            Endurance = MaxEndurance;
+            Intelligence = MaxIntelligence;
+
+
+            Console.WriteLine("🏡 Вы отдохнули и восстановили все характеристики!");
+            Console.WriteLine($"❤️ HP: {Health}, ⚡ Стамина: {Stamina}, 🛡️ Выносливость: {Endurance}, 🧠 Интеллект: {Intelligence}, 🏃 Скорость: {Speed}");
+        }
+
+
+
+        public Person_entities(int health, int stamina, int endurance, int intelligence, int speed, string name)
+        {
+            Name = name;
             Health = health;
             Stamina = stamina;
             Endurance = endurance;
@@ -59,7 +81,7 @@ namespace TravelRPGSystem_1.Characters.Person_Class
         }
         public void PrintStats()
         {
-            Console.WriteLine($"📊 Статы персонажа: HP: {Health}, Stamina: {Stamina}, Endurance: {Endurance}, Intelligence: {Intelligence}, Speed: {Speed}");
+            Console.WriteLine($"📊 {Name}: HP: {Health}, Stamina: {Stamina}, Endurance: {Endurance}, Intelligence: {Intelligence}, Speed: {Speed}");
         }
     }
     
