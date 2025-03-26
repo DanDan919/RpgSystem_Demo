@@ -32,7 +32,7 @@ namespace TravelRPGSystem_1.Obstacles.Plain
                 int successChance = 50 + intelligenceFactor * 2; // Базовый шанс 50% + бонус от интеллекта
                 if (successChance > 90) successChance = 90; // Ограничение на 90%
 
-                int roll = _random.Next(100); // Генерируем число от 0 до 99
+                int roll = _random.Next(100); 
 
                 if (roll < successChance)
                 {
@@ -40,7 +40,7 @@ namespace TravelRPGSystem_1.Obstacles.Plain
                     _character.Health += 50;
                     _character.Stamina += 50;
                     _character.Endurance += 30;
-                    _character.Intelligence += 5; // Чуть поднимаем интеллект за опыт общения
+                    _character.Intelligence += 5; 
                     _character.Speed += 5;
                 }
                 else
