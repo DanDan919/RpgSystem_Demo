@@ -56,11 +56,11 @@ namespace TravelRPGSystem_1.Events.Event_algorithm
             }
         }
 
-        private void BubbleSort() { /* Код сортировки */ }
-        private void QuickSort(int low, int high) { /* Код сортировки */ }
-        private void InsertionSort() { /* Код сортировки */ }
+        private void BubbleSort() { /* сортировка пузырьком */ }
+        private void QuickSort(int low, int high) { /* быстррая сортировка */ }
+        private void InsertionSort() { /* сортировка вставками */ }
 
-        private bool LinearSearch(int target)
+        private bool LinearSearch(int target)  // линейный поиск
         {
             foreach (var num in eventsArray)
             {
@@ -72,7 +72,7 @@ namespace TravelRPGSystem_1.Events.Event_algorithm
             return false;
         }
 
-        private bool BinarySearch(int target)
+        private bool BinarySearch(int target)  // бинарный поиск
         {
             int left = 0, right = eventsArray.Length - 1;
             while (left <= right)

@@ -19,9 +19,9 @@ namespace TravelRPGSystem_1.Routes.Main_Biome
 
         public void ApplyPlainsDebuff(Person_entities character)
         {
-            character.Speed -= (int)(character.Speed * 0.12); // Уменьшение скорости на 12%
-            character.Health -= (int)(character.Health * 0.15);// уменьшение здоровья на 15%
-            character.Stamina -= (int)(character.Stamina * 0.2); // Стамина падает из-за страха
+            character.Speed -= (int)(character.Speed * 0.12); 
+            character.Health -= (int)(character.Health * 0.15);
+            character.Stamina -= (int)(character.Stamina * 0.2); 
             Console.WriteLine($"Жаркое солнце истощает вас. Стамина уменьшена: {Character.Stamina}");
         }
     }

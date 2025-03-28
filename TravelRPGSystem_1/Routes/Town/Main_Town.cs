@@ -13,9 +13,9 @@ namespace TravelRPGSystem_1.Routes.Main_Biome
 
         public override void TriggerEvent()
         {
-            Console.WriteLine("🏙️ Вы входите в город...");
-            Character.RestoreFullStats(); // Полностью восстанавливаем статы
-            Console.WriteLine("💪 Все характеристики восстановлены!");
+            Console.WriteLine(" Вы входите в город...");
+            Character.RestoreFullStats(); 
+            Console.WriteLine(" Все характеристики восстановлены!");
         }
     }
 }

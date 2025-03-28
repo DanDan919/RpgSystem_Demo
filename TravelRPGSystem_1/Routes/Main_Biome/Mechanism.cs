@@ -32,7 +32,7 @@ namespace TravelRPGSystem_1.Routes.Main_Biome
             for (int i = 0; i < 10; i++)
             {
                 int randomIndex = rng.Next(biomeTemplates.Count);
-                biomeStack.Push(biomeTemplates[randomIndex]); // Добавляем случайный биом
+                biomeStack.Push(biomeTemplates[randomIndex]); 
             }
         }
 

@@ -8,14 +8,14 @@ namespace TravelRPGSystem_1.Movement_on_the_map
     {
         public async Task ShowProgressBar(int totalTime)
         {
-            int progressBarLength = 20; // Длина прогресс-бара
-            int updateInterval = totalTime / progressBarLength; // Время обновления одной части
+            int progressBarLength = 20; 
+            int updateInterval = totalTime / progressBarLength; 
 
-            Console.Write("\n🌍 Перемещение: [");
+            Console.Write("\n Перемещение: [");
             for (int i = 0; i < progressBarLength; i++)
             {
-                await Task.Delay(updateInterval); // Ждем перед обновлением
-                Console.Write("*"); // Добавляем звезду
+                await Task.Delay(updateInterval); 
+                Console.Write("*"); 
             }
             Console.WriteLine("] ✅");
         }

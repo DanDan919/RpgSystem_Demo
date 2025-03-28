@@ -17,34 +17,34 @@ namespace TravelRPGSystem_1.Movement_on_the_map
         public Move_Algorithm(Person_entities character)
         {
             Character = character;
-            biomeMechanism = new Mechanism(character); // Инициализация механизма биомов
+            biomeMechanism = new Mechanism(character); 
         }
 
         public async Task MoveToNextBiome()
         {
             if (biomeMechanism.IsBiomeStackEmpty())
             {
-                Console.WriteLine("🎉 Все локации пройдены! Путешествие завершено.");
+                Console.WriteLine(" Все локации пройдены! Путешествие завершено.");
                 return;
             }
 
             Main_Biome currentBiome = biomeMechanism.PopBiome();
-            Console.WriteLine($"\n🌍 Персонаж входит в биом: {currentBiome.Name}");
+            Console.WriteLine($"\n Персонаж входит в биом: {currentBiome.Name}");
 
-            // Применяем дебафф
+            
             ApplyBiomeEffects(currentBiome);
 
-            // Рассчитываем задержку
+            
             int delay = CalculateTravelTime(Character);
-            Console.WriteLine($"⏳ Время прохождения биома: {delay / 1000} секунд...");
+            Console.WriteLine($" Время прохождения биома: {delay / 1000} секунд...");
 
-            // Вызов прогресс-бара
+           
             ProgressBar progressBar = new ProgressBar();
             await progressBar.ShowProgressBar(delay);
 
-            // Триггерим событие
+            
             currentBiome.TriggerEvent();
-            Console.WriteLine($"✅ Персонаж прошел биом {currentBiome.Name}!");
+            Console.WriteLine($" Персонаж прошел биом {currentBiome.Name}!");
         }
 
         private void ApplyBiomeEffects(Main_Biome biome)
@@ -64,19 +64,19 @@ namespace TravelRPGSystem_1.Movement_on_the_map
                     plain.ApplyPlainsDebuff(Character);
                     break;
                 case Main_Town town:
-                    town.TriggerEvent(); // В городе персонаж восстанавливается
+                    town.TriggerEvent(); 
                     break;
                 default:
-                    Console.WriteLine("⚠️ В этом биоме нет специальных эффектов.");
+                    Console.WriteLine(" В этом биоме нет специальных эффектов.");
                     break;
             }
         }
 
         private int CalculateTravelTime(Person_entities character)
         {
-            int baseTime = 5000; // 5 секунд базовое время
-            int adjustedSpeed = character.Speed > 0 ? character.Speed : 1; // Защита от деления на 0
-            int travelTime = baseTime / adjustedSpeed * 100; // Учитываем дебаффы
+            int baseTime = 5000; 
+            int adjustedSpeed = character.Speed > 0 ? character.Speed : 1; 
+            int travelTime = baseTime / adjustedSpeed * 100; 
             return travelTime;
         }
     }

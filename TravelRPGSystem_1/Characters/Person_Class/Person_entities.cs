@@ -26,7 +26,7 @@ namespace TravelRPGSystem_1.Characters.Person_Class
         public int MaxIntelligence { get; protected set; }
 
 
-        // 📌 Метод для полного восстановления персонажа
+        
         public void RestoreFullStats()
         {
             Health = MaxHealth;
@@ -51,7 +51,7 @@ namespace TravelRPGSystem_1.Characters.Person_Class
             Speed = speed;
         }
 
-        // 📌 Метод для применения баффов
+        
         public void ApplyBuff(int healthBuff, int staminaBuff, int enduranceBuff, int intelligenceBuff, int speedBuff)
         {
             Health += healthBuff;
@@ -63,7 +63,7 @@ namespace TravelRPGSystem_1.Characters.Person_Class
             Console.WriteLine($"🔹 Бафф применён: +{healthBuff} HP, +{staminaBuff} Stamina, +{enduranceBuff} Endurance, +{intelligenceBuff} Intelligence, +{speedBuff} Speed");
         }
 
-        // 📌 Метод для применения дебаффов
+        
         public void ApplyDebuff(int healthDebuff, int staminaDebuff, int enduranceDebuff, int intelligenceDebuff, int speedDebuff)
         {
             Health -= healthDebuff;
@@ -77,7 +77,7 @@ namespace TravelRPGSystem_1.Characters.Person_Class
         public void ModifySpeed(int amount)
         {
             Speed += amount;
-            if (Speed < 0) Speed = 0; // Минимальная скорость = 0
+            if (Speed < 0) Speed = 0; 
         }
         public void PrintStats()
         {

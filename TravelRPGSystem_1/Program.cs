@@ -14,28 +14,44 @@ namespace TravelRPGSystem_1
             Console.Write("Введите имя персонажа: ");
             string playerName = Console.ReadLine();
 
-            // Выбор класса персонажа
+           
             Person_entities player = ChooseCharacterClass(playerName);
 
             Console.WriteLine($"🔹 {player.Name}, ваше путешествие начинается!");
             player.PrintStats();
 
-            // Создаём основной механизм путешествия
+            
             Move_Algorithm moveAlgorithm = new Move_Algorithm(player);
 
-            // Запуск путешествия
-            while (true)
+            
+            while (player.Health > 0 && player.Stamina > 0 ) 
             {
                 Console.WriteLine("\n📍 Вы путешествуете...");
-                moveAlgorithm.MoveToNextBiome().Wait(); // Ожидание завершения асинхронного метода
+                moveAlgorithm.MoveToNextBiome().Wait(); 
 
-                // Выпадение случайного события
+                
                 Random_Alg randomEvent = new Random_Alg();
-                randomEvent.SortAndSearchEvents(); // Запускаем алгоритм событий
+                randomEvent.SortAndSearchEvents(); 
+
+               
 
                 player.PrintStats();
 
-                Console.WriteLine("🔄 Нажмите Enter, чтобы продолжить...");
+                if (player.Health <= 0)
+                {
+                    Console.WriteLine($" {player.Name} пал в пути. Путешествие окончено.");
+                    break;
+                }
+
+                if (player.Stamina <= 0)
+                {
+                    Console.WriteLine($" {player.Name} обессилел и не может двигаться дальше. Путешествие окончено.");
+                    break;
+                }
+
+               
+
+                Console.WriteLine(" Нажмите Enter, чтобы продолжить...");
                 Console.ReadLine();
             }
 
@@ -46,9 +62,9 @@ namespace TravelRPGSystem_1
         static Person_entities ChooseCharacterClass(string name)
         {
             Console.WriteLine("Выберите класс персонажа:");
-            Console.WriteLine("1. 🛡️ Человек");
-            Console.WriteLine("2. 🏹 Эльф");
-            Console.WriteLine("3. ⛏ Гном");
+            Console.WriteLine("1.  Человек");
+            Console.WriteLine("2.  Эльф");
+            Console.WriteLine("3.  Гном");
 
             while (true)
             {

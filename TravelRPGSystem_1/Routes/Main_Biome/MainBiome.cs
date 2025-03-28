@@ -21,11 +21,11 @@ namespace TravelRPGSystem_1.Routes.Main_Biome
        
         public virtual void ApplyDebuff()
         {
-            Console.WriteLine($"⚠️ Дебафф в биоме {Name} применён!");
+            Console.WriteLine($" Дебафф в биоме {Name} применён!");
         }
         public virtual void TriggerEvent()
         {
-            Console.WriteLine($"🎲 Случайное событие в биоме {Name} произошло!");
+            Console.WriteLine($" Случайное событие в биоме {Name} произошло!");
         }
 
     }
