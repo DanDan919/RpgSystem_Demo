@@ -16,7 +16,7 @@ namespace TravelRPGSystem_1.Routes.Main_Biome
             character.Speed -= (int)(character.Speed * 0.12); 
             character.Health -= (int)(character.Health * 0.25); 
             character.Stamina -= (int)(character.Stamina * 0.2);
-            Console.WriteLine($" Болото тянет вас вниз. Скорость: {character.Speed}, Здоровье: {character.Health}");
+            Console.WriteLine($"Болото тянет вас вниз. Скорость: {character.Speed}, Здоровье: {character.Health}");
         }
     }
 }

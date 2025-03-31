@@ -13,6 +13,10 @@ namespace TravelRPGSystem_1.Characters.Person_Class
     {
         public Dwarf_Stats(string name) : base(100, 120, 80, 110, 60,name)
         {
+            MaxHealth = Health;
+            MaxStamina = Stamina;
+            MaxEndurance = Endurance;
+            MaxIntelligence = Intelligence;
         }
     }
 }

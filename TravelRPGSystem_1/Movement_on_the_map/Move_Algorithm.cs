@@ -43,7 +43,7 @@ namespace TravelRPGSystem_1.Movement_on_the_map
             await progressBar.ShowProgressBar(delay);
 
             
-            currentBiome.TriggerEvent();
+            
             Console.WriteLine($" Персонаж прошел биом {currentBiome.Name}!");
         }
 

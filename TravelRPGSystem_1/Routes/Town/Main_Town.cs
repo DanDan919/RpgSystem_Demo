@@ -11,7 +11,7 @@ namespace TravelRPGSystem_1.Routes.Main_Biome
             Name = "Town";
         }
 
-        public override void TriggerEvent()
+        public  void TriggerEvent()
         {
             Console.WriteLine(" Вы входите в город...");
             Character.RestoreFullStats(); 

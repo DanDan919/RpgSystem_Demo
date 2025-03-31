@@ -11,4 +11,5 @@ namespace TravelRPGSystem_1.Routes.Dungeon
     {
         void ApplyDungeonDebuff(Person_entities character);
     }
+
 }
